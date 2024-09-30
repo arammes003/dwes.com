@@ -195,6 +195,104 @@
     echo "Antes numero era 5 ahora es $numero<br>";
     ?>
 
+
+    <h2>
+        Operadores relacionales
+    </h2>
+    <?php
+    /*
+            == Igual a
+            === Identico a
+            != Distinto
+            !== Distinto valor o distinto tipo
+            > Mayor que
+            < Menor que
+            >= Mayor o igual
+            <= Menor o igual
+            <=> Nave espacial
+        */
+    $n1 = 5;
+    $cadena = '5';
+    $n2 = 8;
+
+    $resultado = $n1 == $n2;
+    echo "Es n1 igual que n2: " . (int)$resultado . "<br>";
+    $resultado = $n1 == $cadena;
+    echo "Es n1 igual que cadena: " . $resultado . "<br>";
+    // Operador === Es treu si los valores de los operandos son iguales y del mismo tipo
+    $resultado = $n1 === $cadena;
+    echo "Es n1 identico a cadena: " . (int)$resultado . "<br>";
+
+    $resultado = $n1 != $n2;
+    echo "Es n1 distinto de n1: " . (int)$resultado . "<br>";
+
+    // Operador !== Es true si son distintos o de diferente tipo, false en caso contrario
+    $resultado = $n1 != $cadena;
+    echo "Es n1 distinto de cadena: " . (int)$resultado . "<br>";
+    $resultado = $n1 !== $cadena;
+    echo "Es n1 distinto de cadena: " . (int)$resultado . "<br>";
+
+    // Nave espacial
+    // Si n1 es mayor que n2 -> 1
+    // Si n1 es igual que n2 -> 0
+    // Si n1 es menor que n2 -> -1
+    $resultado = $n1 <=> $n2;
+    echo "Es n1 menor, igual o mayor que n2: " . $resultado . "<br>";
+
+    $nombre1 = "Zacarias";
+    $nombre2 = "adela";
+    $resultado = $nombre1 > $nombre2;
+    echo "Es nombre1 mayor que nombre2: " . (int)$resultado . "<br>";
+
+    $nombre1 = "abcZacarias";
+    $nombre2 = "abcadela";
+    $resultado = $nombre1 > $nombre2;
+    echo "Es nombre1 mayor que nombre2: " . (int)$resultado . "<br>";
+
+    $nombre1 = "Mario";
+    $nombre2 = "MariA";
+    $resultado = $nombre1 < $nombre2;
+    echo "Es nombre1 menor que nombre2: " . (int)$resultado . "<br>";
+
+    $nombre1 = "MariO";
+    $nombre2 = "Maria";
+    $resultado = $nombre1 < $nombre2;
+    echo "Es nombre1 menor que nombre2: " . (int)$resultado . "<br>";
+
+
+    $nombre1 = "maria";
+    $nombre2 = "Maria";
+    $resultado = $nombre1 === strtolower($nombre2);
+    echo "Es nombre1 menor que nombre2: " . (int)$resultado . "<br>";
+    ?>
+
+    <h2>Operadores Lógicos</h2>
+    <?php
+    // AND  And logico o conjuncion logica
+    // OR   Or logico o disyuncion logica
+    // XOR  Or exclusivo
+    //  !   Not
+    // &&   And logico
+    // ||   Or logico
+
+    $n1 = 9;
+    $n2 = 5;
+    $n3 = 10;
+    $res = $n1 == $n2 or $n2 > $n3;
+    $res =  $n1 == $n2 and $n2 < $n3;
+    echo "El resultado es: " . (int)$res . "<br>";
+
+    $res = $n1 == 9 or $n2 < $n1 and $n3 > 10;
+    echo "El resultado es: " . (int)$res . "<br>";
+
+    $res1 = ($n1 == 9 or $n2 < $n1) and $n3 > 10;
+    echo "El resultado es: " . $res1 . "<br>";
+
+    $resultado = $n1 + 5 / $n3 < $n1 ** 3 and $n3 / 5 + $n2 * 2 >= $n1 * $n2 / $n3 or $n1 - 3 % 2 == $n3 - 7;
+    echo "El resultado es: " . $resultado . "<br>";
+
+    ?>
+
 </body>
 
 </html>
