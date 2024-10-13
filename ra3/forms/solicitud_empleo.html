@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud empleo</title>
+    <link rel="stylesheet" href="/styles/general.css" type="text/css">
+    <link rel="stylesheet" href="/styles/forms.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Solicitud de empleo</h1>
+    </header>
+    <form method="POST" action="/ra3/forms/solicitud_empleo.php">
+        <!-- Infroamcion personal -->
+         <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" name="nombre" id="nombre" size="50" required placeholder="Introduce aquí tu nombre completo">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" size="40" required>
+
+            <label for="clave">Clave</label>
+            <input type="password" name="clave" id="clave" size="10" required>
+
+            <label for="Linkedin">Perfil de Linkedin</label>
+            <input type="url" name="linkedin" id="linkedin" size="60">
+         </fieldset>
+
+         <fieldset>
+            <legend>Detalles del trabajo</legend>
+            <label for="fecha_disponible">Fecha disponibilidad</label>
+            <input type="date" name="fecha_disponible" id="fecha_disponible" required>
+
+            <label for="hora_entrevista">Hora entrevista</label>
+            <input type="time" name="hora_entrevista" id="hora_entrevista" required>
+
+            <label for="salario">Expectativas salariales</label>
+            <input type="number" name="salario" id="salario" required min="1000"> 
+        
+        </fieldset>
+
+        <!-- Preferencia del puesto -->
+         <fieldset>
+            <legend>Preferencias del puesto</legend>
+            <label for="areas">¿En que áreas quieres trabajar?</label>
+            <div>
+                <input type="checkbox" name="areas[]" id="area1" value="dg">Diseño gráfico<br>
+                <input type="checkbox" name="areas[]" id="area2" value="ds">Desarrollo software<br>           
+                <input type="checkbox" name="areas[]" id="area3" value="m">Marketing<br>
+                <input type="checkbox" name="areas[]" id="area4" value="rh">Recursos humnos<br>
+            </div>
+
+            <label for="modalidad">Modalidad de trabao</label>
+            <div>
+                <input type="radio" name="modalidad" id="modalidad1" value="presencial">Presencial<br>
+                <input type="radio" name="modalidad" id="modalidad2" value="online">Online<br>
+                <input type="radio" name="modalidad" id="modalidad3" value="hibrido">Híbrido<br>
+            </div>
+
+            <label for="tipo_contrato">Tipo de contrato</label>
+            <select name="tipo_contrato" id="tipo_contrato" size="1">
+                <option value="">Seleccione uno...</option>
+                <option value="tiempo_completo">Tiempo completo</option>
+                <option value="media_jornada">Media jornada</option>
+                <option value="freelance">Freelance</option>
+            </select>
+
+            <label for="habilidades">Habilidades</label>
+            <select name="habilidades[]" id="habilidades" multiple size="5">ç
+                <option value="js">JavaScript</option>
+                <option value="py">Python</option>
+                <option value="uxui">Diseño UX/UI</option>
+                <option value="seo">SEO/SEM</option>
+                <option value="gp">Gestión de proyectos</option>
+            </select>
+
+            <label for="comentarios">Comentarios</label>
+            <textarea name="comentarios" id="comentarios" placeholder="Cuentame más sobre ti" rows="4" cols="40"></textarea>
+         </fieldset>
+         <input type="submit" name="operacion" value="Enviar">
+    </form>
+</body>
+</html>
