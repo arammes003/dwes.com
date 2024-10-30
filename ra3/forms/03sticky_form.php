@@ -11,7 +11,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/funciones.php");
 
-inicio_html("Sticky Forms", '/estilos/general.css', '/estilos/forms.css');
+inicio_html("Sticky Forms", ['/styles/general.css', '/styles/forms.css']);
 
 $email = isset($_POST['email']) ? $_POST['email'] : "";
 $tema = isset($_POST['tema']) ? $_POST['tema'] : "";
